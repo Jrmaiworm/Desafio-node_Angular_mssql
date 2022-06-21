@@ -1,0 +1,42 @@
+﻿<h1>Clientes</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Clientes</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 10%">Name</th>
+            <th style="width: 10%">Sobrenome</th>
+            <th style="width: 10%">Email</th>
+            <th style="width: 10%">Cep</th>
+            <th style="width: 10%">Rua</th>
+            <th style="width: 10%">Cidade</th>
+            <th style="width: 10%">Estado</th>
+            <th style="width: 10%">Bairro</th>
+            <th style="width: 10%">Numero</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let costumer of costumers">
+            <td> {{costumer.name}} </td>
+            <td>{{costumer.lastName}}</td>
+            <td>{{costumer.email}}</td>
+            <td>{{costumer.cep}}</td>
+            <td>{{costumer.logradouro}}</td>
+            <td>{{costumer.cidade}}</td>
+            <td>{{costumer.estado}}</td>
+            <td>{{costumer.bairro}}</td>
+            <td>{{costumer.numero}}</td>
+            <td style="white-space: nowrap">
+                <a routerLink="edit/{{costumer.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <button (click)="deleteCostumer(costumer.id)" class="btn btn-sm btn-danger btn-delete-costumer" [disabled]="costumer.isDeleting">
+                    <span *ngIf="costumer.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!costumer.isDeleting">Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!costumers">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,108 @@
+﻿<h1 *ngIf="isAddMode">Add Clientes</h1>
+<h1 *ngIf="!isAddMode">Edit Clientes</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      
+        <div class="form-group col-5">
+            <label>Nome</label>
+            <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">First Name is required</div>
+            </div>
+        </div>
+        <div class="form-group col-5">
+            <label>Sobrenome</label>
+            <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-7">
+            <label>Email</label>
+            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="form-row">
+        <div class="form-group col-7">
+            <label>Cep</label>
+            <input type="text" formControlName="cep" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cep.errors }" />
+            <div *ngIf="submitted && f.cep.errors" class="invalid-feedback">
+                <div *ngIf="f.cep.errors.required">cep is required</div>
+                <div *ngIf="f.cep.errors.cep">cep must be a valid cep address</div>
+            </div>
+        </div>
+      
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-7">
+            <label>Cidade</label>
+            <input type="text" formControlName="cidade" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cidade.errors }" />
+            <div *ngIf="submitted && f.cidade.errors" class="invalid-feedback">
+                <div *ngIf="f.cidade.errors.required">cidade is required</div>
+                <div *ngIf="f.cidade.errors.cidade">cidade must be a valid cidade address</div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="form-row">
+        <div class="form-group col-7">
+            <label>Estado</label>
+            <input type="text" formControlName="estado" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.estado.errors }" />
+            <div *ngIf="submitted && f.estado.errors" class="invalid-feedback">
+                <div *ngIf="f.estado.errors.required">estado is required</div>
+                <div *ngIf="f.estado.errors.estado">estado must be a valid estado address</div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="form-row">
+        <div class="form-group col-7">
+            <label>Logradouro</label>
+            <input type="text" formControlName="logradouro" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.logradouro.errors }" />
+            <div *ngIf="submitted && f.logradouro.errors" class="invalid-feedback">
+                <div *ngIf="f.logradouro.errors.required">logradouro is required</div>
+                <div *ngIf="f.logradouro.errors.logradouro">logradouro must be a valid logradouro address</div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="form-row">
+        <div class="form-group col-7">
+            <label>Bairro</label>
+            <input type="text" formControlName="bairro" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bairro.errors }" />
+            <div *ngIf="submitted && f.bairro.errors" class="invalid-feedback">
+                <div *ngIf="f.bairro.errors.required">bairro is required</div>
+                <div *ngIf="f.bairro.errors.bairro">bairro must be a valid bairro address</div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="form-row">
+        <div class="form-group col-7">
+            <label>Numero</label>
+            <input type="text" formControlName="numero" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numero.errors }" />
+            <div *ngIf="submitted && f.numero.errors" class="invalid-feedback">
+                <div *ngIf="f.numero.errors.required">numero is required</div>
+                <div *ngIf="f.numero.errors.numero">numero must be a valid numero address</div>
+            </div>
+        </div>
+      
+    </div>
+    
+ 
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Save
+        </button>
+        <a routerLink="/costumers" class="btn btn-link">Cancel</a>
+    </div>
+</form>
