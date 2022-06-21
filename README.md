@@ -1,6 +1,11 @@
 # Desafio-node_Angular_mssql
 Neste projeto desenvolvi uma Api Nodejs com Bd Sql_Server_Azure, autenticacao JWT e crud de clientes. FrontEnd em Angular11. 
 
+Instruções para rodar o projeto:
+
+Para seguir as etapas abaixo, você precisará do Node.js & npm instalados, instale-o em https://nodejs.org/ .
+
+
 
 1-->> Execute a API CRUD Node + AZURE_SQLSERVER localmente
 Baixe ou clone o código-fonte do projeto.
